@@ -20,4 +20,4 @@ function adicionaritem(lista)
 }
 var itens = ["item 1", "item 2"];
 adicionaritem(itens);
-console.log(itens); // ["item 1", "item 2", "novo item"]
+console.log(itens); // "item 1", "item 2", "novo item"
