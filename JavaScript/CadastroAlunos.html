@@ -16,8 +16,8 @@
         button {
             margin-top: 10px;
             padding: 8px 16px;
-            background-color: #4CAF50;
-            color: white;
+            background-color: #131212;
+            color: rgb(17, 148, 54);
             border: none;
             cursor: pointer;
             border-radius: 4px;
@@ -39,7 +39,8 @@
     <label>Curso:</label>
     <input type="text" id="curso"/>
 
-    <button>Cadastrar Aluno</button>
+    <button onclick="CadastrarAluno()">
+        Cadastrar Aluno</button>
 
     <h2>Alunos Cadastrados:</h2>
 
@@ -68,12 +69,30 @@
             {
                 alert("Preencha todos os campos!");
             }
+
+
         }
         function ExibirAlunos()
         {
-           
+           const lista = document.getElementById("lista-alunos");
+           lista.innerHTML = "";
+          for (let i = 0; i < alunos.length; i++)
+            {
+                const aluno = alunos[i];
+                const item = document.createElement("li");
+                item.textContent = `Aluno ${i+1}:
+                Nome: ${aluno.nome}, Idade: ${aluno.idade}, Curso: ${aluno.curso}`;
+                lista.appendChild(item);
+            }
+        }
+        function LimparCampos()
+        {
+            document.getElementById("nome").value = "";
+            document.getElementById("idade").value = "";
+            document.getElementById("curso").value = "";
         }
     </script>
 
 </body>
 </html>
+
